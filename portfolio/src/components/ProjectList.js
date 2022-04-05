@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function ProjectList(props) {
   const { list } = props;
-  console.log(props);
+
   return (
     <ul>
       {list.map((project) => (
-        <img className="card" src={project.img} />
+        <img className="card" src={project.img} alt="" />
       ))}
     </ul>
   );

@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 0;
+  background: #ccc;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.button:not(:first-child) {
+  margin-left: 5px;
+}
+
+.select-button {
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-items: center;
+  max-width: 1200px;
+}
+
+.item {
+  display: block;
+}
+
+.wrappe-item {
+  overflow: hidden;
+  margin: 4px;
+}
+
+.item img {
+  display: inline-block;
+  margin: 2px 0;
+}

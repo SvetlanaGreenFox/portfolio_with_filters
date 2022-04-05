@@ -6,7 +6,7 @@ import Toolbar from './Toolbar.js';
 function Portfolio() {
   const projects = photo;
   const filters = ['All', 'Websites', 'Flayers', 'Business Cards'];
-  const [state, setState] = useState('');
+  const [state, setState] = useState('All');
 
   const filtered = (projects, state) => {
     if (state === 'All') {
@@ -14,21 +14,25 @@ function Portfolio() {
     }
     return projects.filter((p) => p.category === state);
   };
-  console.log(state);
+
   const filteredProjects = filtered(projects, state);
+
+  const selectFilter = (state) => {
+    setState(state);
+  };
 
   return (
     <div>
-      {/* <Toolbar filters={filters} selected={state} onSelectFilter={onSelect} /> */}
+      <Toolbar
+        filters={filters}
+        selected={state}
+        onSelectFilter={selectFilter}
+      />
 
-      <ul>
-        {filters.map((filter) => (
-          <button onClick={() => console.log(filter)}>{filter}</button>
-        ))}
-      </ul>
       <ProjectList list={filteredProjects} />
     </div>
   );
+}
 }
 
 export default Portfolio;
